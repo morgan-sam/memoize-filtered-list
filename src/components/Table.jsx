@@ -9,14 +9,16 @@ const Table = (props) => {
     <table className="table">
       <thead>
         <tr>
-          {columns.map((el) => (
-            <th className="table-cell">{capitalise(el)}</th>
+          {columns.map((el, i) => (
+            <th key={i} className="table-cell">
+              {capitalise(el)}
+            </th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {books.map((el) => (
-          <tr>
+        {books.map((el, i) => (
+          <tr key={i}>
             <td className="table-cell">{el.title}</td>
             <td className="table-cell">{el.author_name}</td>
             <td className="table-cell">
