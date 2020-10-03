@@ -1,5 +1,6 @@
 import React from "react";
 import "css/table.css";
+import { capitalise } from "js/utility";
 
 const Table = (props) => {
   const { books } = props;
@@ -8,7 +9,7 @@ const Table = (props) => {
     <table className="table">
       <tr>
         {columns.map((el) => (
-          <th className="table-cell">{el}</th>
+          <th className="table-cell">{capitalise(el)}</th>
         ))}
       </tr>
       {books.map((el) => (
