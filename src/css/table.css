@@ -1,0 +1,14 @@
+.table,
+.table-cell {
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+table {
+  margin: 1rem;
+}
+
+.table-cell {
+  padding: 10px;
+}
