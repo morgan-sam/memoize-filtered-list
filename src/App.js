@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Table from "./Table";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -14,9 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      {books.map((el) => (
-        <div>{el.title}</div>
-      ))}
+      <Table {...{ books }} />
     </div>
   );
 }
