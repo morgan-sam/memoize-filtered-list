@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Table from "components/Table";
+import Search from "components/Search";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <div className="App">
+      <Search />
       <Table {...{ books }} />
     </div>
   );
