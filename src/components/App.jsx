@@ -5,8 +5,10 @@ import Search from "components/Search";
 function App() {
   const [books, setBooks] = useState([]);
 
-  const fetchBooks = async () => {
-    const res = await fetch(" http://openlibrary.org/search.json?q=fantasy");
+  const fetchBooks = async (searchTerm) => {
+    const res = await fetch(
+      `http://openlibrary.org/search.json?q=${searchTerm}`
+    );
     const json = await res.json();
     setBooks(json.docs);
     localStorage.setItem("books", JSON.stringify(json.docs));
@@ -15,12 +17,12 @@ function App() {
   useEffect(() => {
     const localBooks = JSON.parse(localStorage.getItem("books"));
     if (localBooks && localBooks.length > 0) setBooks(localBooks);
-    else fetchBooks();
+    else fetchBooks("Fantasy");
   }, []);
 
   return (
     <div className="App">
-      <Search />
+      <Search {...{ fetchBooks }} />
       <Table {...{ books }} />
     </div>
   );
