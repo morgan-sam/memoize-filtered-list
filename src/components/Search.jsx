@@ -5,8 +5,8 @@ const Search = (props) => {
   const { fetchBooks } = props;
   const [search, setSearch] = useState("");
 
-  const searchSubmit = () => {
-    fetchBooks(search);
+  const searchSubmit = async () => {
+    await fetchBooks(search);
     setSearch("");
   };
 
