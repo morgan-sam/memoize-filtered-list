@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "css/search.css";
 
 const Search = (props) => {
-  const { fetchBooks } = props;
+  const { fetchBooks, loading } = props;
   const [search, setSearch] = useState("");
 
   const searchSubmit = async () => {
@@ -23,6 +23,7 @@ const Search = (props) => {
       <form onKeyDown={onKeyDown}>
         <input
           className="search"
+          disabled={loading}
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search library"

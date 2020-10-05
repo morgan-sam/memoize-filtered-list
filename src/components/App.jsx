@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="app">
-      <Search {...{ fetchBooks }} />
+      <Search {...{ fetchBooks, loading }} />
       {loading ? <Loading /> : <Table {...{ books }} />}
     </div>
   );
