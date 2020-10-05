@@ -2,8 +2,12 @@ import React, { useEffect, useState } from "react";
 
 const Loading = (props) => {
   const [dots, setDots] = useState(1);
+
   useEffect(() => {
-    setInterval(() => setDots((cur) => (cur % 3) + 1), 350);
+    const id = setInterval(() => {
+      setDots((cur) => (cur % 3) + 1);
+    }, 350);
+    return () => clearInterval(id);
   }, []);
 
   return <div>Loading{".".repeat(dots)}</div>;
