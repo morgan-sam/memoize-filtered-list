@@ -1,0 +1,6 @@
+.app {
+  margin: 1rem;
+}
+.app > * {
+  margin-bottom: 1rem;
+}

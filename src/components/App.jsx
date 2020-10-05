@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "css/app.css";
 import Table from "components/Table";
 import Search from "components/Search";
 
@@ -21,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="app">
       <Search {...{ fetchBooks }} />
       <Table {...{ books }} />
     </div>
