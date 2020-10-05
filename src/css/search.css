@@ -10,6 +10,7 @@
 .search-container > button {
   height: 2rem;
   width: 2rem;
+  padding: 0;
 }
 
 .search {
