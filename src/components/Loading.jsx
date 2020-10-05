@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Loading = (props) => {
-  return <div>Loading...</div>;
+  const [dots, setDots] = useState(1);
+  useEffect(() => {
+    setInterval(() => setDots((cur) => (cur % 3) + 1), 350);
+  }, []);
+
+  return <div>Loading{".".repeat(dots)}</div>;
 };
 
 export default Loading;
