@@ -5,12 +5,16 @@ const Search = (props) => {
   const { fetchBooks } = props;
   const [search, setSearch] = useState("");
 
+  const searchSubmit = () => {
+    fetchBooks(search);
+    setSearch("");
+  };
+
   const onKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       e.stopPropagation();
-      fetchBooks(search);
-      setSearch("");
+      searchSubmit();
     }
   };
 
@@ -26,12 +30,12 @@ const Search = (props) => {
           name="name"
         />
       </form>
-      <button>
+      <button onClick={searchSubmit}>
         <span role="img" aria-label="search">
           🔍
         </span>
       </button>
-      <button>
+      <button onClick={() => setSearch("")}>
         <span role="img" aria-label="cancel">
           ❌
         </span>
