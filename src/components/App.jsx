@@ -3,6 +3,7 @@ import "css/app.css";
 import Loading from "components/Loading";
 import Table from "components/Table";
 import Search from "components/Search";
+import Filter from "components/Filter";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -28,6 +29,7 @@ function App() {
   return (
     <div className="app">
       <Search {...{ fetchBooks, loading }} />
+      <Filter />
       {loading ? <Loading /> : <Table {...{ books }} />}
     </div>
   );
