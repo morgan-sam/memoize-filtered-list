@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "css/app.css";
+import "css/input.css";
 import Loading from "components/Loading";
 import Table from "components/Table";
 import Search from "components/Search";

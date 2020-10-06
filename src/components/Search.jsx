@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "css/search.css";
 
 const Search = (props) => {
   const { fetchBooks, loading } = props;
@@ -19,10 +18,10 @@ const Search = (props) => {
   };
 
   return (
-    <div className="search-container">
+    <div className="input-container">
       <form onKeyDown={onKeyDown}>
         <input
-          className="search"
+          className="input"
           disabled={loading}
           value={search}
           onChange={(e) => setSearch(e.target.value)}

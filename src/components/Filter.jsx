@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "css/filter.css";
 
 const Filter = (props) => {
   const { loading, filterBooks } = props;
@@ -10,10 +9,10 @@ const Filter = (props) => {
   }, [filter]);
 
   return (
-    <div className="filter-container">
+    <div className="input-container">
       <form>
         <input
-          className="filter"
+          className="input"
           disabled={loading}
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
