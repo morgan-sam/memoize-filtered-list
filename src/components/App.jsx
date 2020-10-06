@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="app">
       <Search {...{ fetchBooks, loading }} />
-      <Filter />
+      <Filter {...{ loading }} />
       {loading ? <Loading /> : <Table {...{ books }} />}
     </div>
   );
