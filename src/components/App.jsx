@@ -11,7 +11,9 @@ function App() {
   const [filteredBooks, setFilteredBooks] = useState([]);
 
   const filterBooks = (str) => {
-    const filteredList = books.filter((el) => el.title.match(str));
+    const filteredList = books.filter((el) =>
+      el.title.toLowerCase().match(str.toLowerCase())
+    );
     setFilteredBooks(filteredList);
   };
 
