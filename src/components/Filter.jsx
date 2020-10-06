@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "css/filter.css";
 
 const Filter = (props) => {
-  const { loading } = props;
-  const [search, setSearch] = useState("");
+  const { loading, filterBooks } = props;
 
   return (
     <div className="filter-container">
@@ -11,9 +10,8 @@ const Filter = (props) => {
         <input
           className="filter"
           disabled={loading}
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Filter book list"
+          onChange={(e) => filterBooks(e.target.value)}
+          placeholder="Filter book list titles"
           type="text"
           name="name"
         />
