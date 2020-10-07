@@ -2,13 +2,15 @@ import React from "react";
 import "css/table.css";
 import { capitalise } from "js/utility";
 
+const MAX_CELL_ENTRY_LENGTH = 30;
+
 const Table = (props) => {
   const { books } = props;
   const columns = ["ID", "book", "author", "language", "year", "publisher"];
 
   const shorten = (str) => {
     if (!str) return null;
-    else if (str.length > 30) return str.slice(0, 30) + "...";
+    else if (str.length > MAX_CELL_ENTRY_LENGTH) return str.slice(0, MAX_CELL_ENTRY_LENGTH) + "...";
     else return str;
   };
 
