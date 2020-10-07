@@ -10,7 +10,8 @@ const Table = (props) => {
 
   const shorten = (str) => {
     if (!str) return null;
-    else if (str.length > MAX_CELL_ENTRY_LENGTH) return str.slice(0, MAX_CELL_ENTRY_LENGTH) + "...";
+    else if (str.length > MAX_CELL_ENTRY_LENGTH)
+      return str.slice(0, MAX_CELL_ENTRY_LENGTH) + "...";
     else return str;
   };
 
@@ -31,7 +32,7 @@ const Table = (props) => {
             <td className="table-cell">{i}</td>
             <td className="table-cell">{shorten(el.title)}</td>
             <td className="table-cell">
-              {el.author_name ? shorten(el.author_name.join(" ")) : null}
+              {el.author_name ? shorten(el.author_name.join(", ")) : null}
             </td>
             <td className="table-cell">
               {el.language ? shorten(el.language.toString()) : null}
