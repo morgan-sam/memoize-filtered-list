@@ -4,7 +4,7 @@ import { capitalise } from "js/utility";
 
 const Table = (props) => {
   const { books } = props;
-  const columns = ["book", "author", "language", "year", "publisher"];
+  const columns = ["ID", "book", "author", "language", "year", "publisher"];
 
   const shorten = (str) => {
     if (!str) return null;
@@ -26,6 +26,7 @@ const Table = (props) => {
       <tbody>
         {books.map((el, i) => (
           <tr key={i}>
+            <td className="table-cell">{i}</td>
             <td className="table-cell">{shorten(el.title)}</td>
             <td className="table-cell">
               {el.author_name ? shorten(el.author_name.join(" ")) : null}
