@@ -15,6 +15,27 @@ const Table = (props) => {
     else return str;
   };
 
+  const generateCell = (value, key) => {
+    if (value == null)
+      return (
+        <td key={key} className="table-cell">
+          {" "}
+        </td>
+      );
+    else if (Array.isArray(value) && value.length > 0)
+      return (
+        <td key={key} className="table-cell">
+          {shorten(value.join(", "))}
+        </td>
+      );
+    else
+      return (
+        <td key={key} className="table-cell">
+          {shorten(value)}
+        </td>
+      );
+  };
+
   return (
     <table className="table">
       <thead>
@@ -29,18 +50,14 @@ const Table = (props) => {
       <tbody>
         {books.map((el, i) => (
           <tr key={i}>
-            <td className="table-cell">{i}</td>
-            <td className="table-cell">{shorten(el.title)}</td>
-            <td className="table-cell">
-              {el.author_name ? shorten(el.author_name.join(", ")) : null}
-            </td>
-            <td className="table-cell">
-              {el.language ? shorten(el.language.join(", ")) : null}
-            </td>
-            <td className="table-cell">{shorten(el.first_publish_year)}</td>
-            <td className="table-cell">
-              {el.publisher ? shorten(el.publisher.join(", ")) : null}
-            </td>
+            {[
+              i,
+              el.title,
+              el.author_name,
+              el.language,
+              el.first_publish_year,
+              el.publisher,
+            ].map((val, key) => generateCell(val, key))}
           </tr>
         ))}
       </tbody>
