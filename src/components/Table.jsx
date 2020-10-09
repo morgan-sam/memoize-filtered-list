@@ -1,7 +1,7 @@
 import React from "react";
 import "css/table.css";
 import { capitalise } from "js/utility";
-import Cell from "components/Cell";
+import Entry from "components/Entry";
 
 const Table = (props) => {
   const { books } = props;
@@ -19,19 +19,8 @@ const Table = (props) => {
         </tr>
       </thead>
       <tbody>
-        {books.map((el, i) => (
-          <tr key={i}>
-            {[
-              i,
-              el.title,
-              el.author_name,
-              el.language,
-              el.first_publish_year,
-              el.publisher,
-            ].map((value, cellKey) => (
-              <Cell {...{ value, cellKey }} />
-            ))}
-          </tr>
+        {books.map((entry, entryKey) => (
+          <Entry {...{ entry, entryKey }} key={entryKey} />
         ))}
       </tbody>
     </table>

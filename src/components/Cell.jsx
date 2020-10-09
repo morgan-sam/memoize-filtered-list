@@ -3,7 +3,7 @@ import React from "react";
 const MAX_CELL_ENTRY_LENGTH = 30;
 
 const Cell = (props) => {
-  const { value, cellKey } = props;
+  const { value } = props;
 
   const shorten = (str) => {
     if (str === undefined) return null;
@@ -19,11 +19,7 @@ const Cell = (props) => {
     else return shorten(value);
   };
 
-  return (
-    <td key={cellKey} className="table-cell">
-      {formatContents(value)}
-    </td>
-  );
+  return <td className="table-cell">{formatContents(value)}</td>;
 };
 
 export default Cell;
