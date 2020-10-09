@@ -35,11 +35,11 @@ const Table = (props) => {
               {el.author_name ? shorten(el.author_name.join(", ")) : null}
             </td>
             <td className="table-cell">
-              {el.language ? shorten(el.language.toString()) : null}
+              {el.language ? shorten(el.language.join(", ")) : null}
             </td>
             <td className="table-cell">{shorten(el.first_publish_year)}</td>
             <td className="table-cell">
-              {el.publisher ? shorten(el.publisher.toString()) : null}
+              {el.publisher ? shorten(el.publisher.join(", ")) : null}
             </td>
           </tr>
         ))}
