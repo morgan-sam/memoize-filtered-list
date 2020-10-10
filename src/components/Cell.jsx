@@ -5,21 +5,22 @@ const MAX_CELL_ENTRY_LENGTH = 30;
 const Cell = (props) => {
   const { value } = props;
 
-  const shorten = (str) => {
-    if (str === undefined) return null;
+  const getCell = (str) => {
+    if (str === undefined) return <td className="table-cell" />;
     else if (str.length > MAX_CELL_ENTRY_LENGTH)
-      return str.slice(0, MAX_CELL_ENTRY_LENGTH) + "...";
-    else return str;
+      return (
+        <td className="table-cell" title={str}>
+          {str.slice(0, MAX_CELL_ENTRY_LENGTH) + "..."}
+        </td>
+      );
+    else return <td className="table-cell">{str}</td>;
   };
 
-  const formatContents = (value) => {
-    if (typeof value !== "number" && value === undefined) return null;
-    else if (Array.isArray(value) && value.length > 0)
-      return shorten(value.join(", "));
-    else return shorten(value);
-  };
-
-  return <td className="table-cell">{formatContents(value)}</td>;
+  if (typeof value !== "number" && value === undefined)
+    return <td className="table-cell" />;
+  else if (Array.isArray(value) && value.length > 0)
+    return getCell(value.join(", "));
+  else return getCell(value);
 };
 
 export default Cell;
