@@ -18,8 +18,7 @@ const Cell = (props) => {
     else return <td className="table-cell">{str}</td>;
   };
 
-  if (typeof value !== "number" && value === undefined)
-    return <td className="table-cell" />;
+  if (value === undefined) return <td className="table-cell" />;
   else if (Array.isArray(value) && value.length > 0)
     return getCell(value.join(", "));
   else return getCell(value);
