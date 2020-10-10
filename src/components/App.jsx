@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import "css/app.css";
 import "css/input.css";
 import Loading from "components/Loading";
-import Table from "components/Table";
 import Search from "components/Search";
 import Filter from "components/Filter";
+import Info from "components/Info";
+import Table from "components/Table";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -43,6 +44,7 @@ function App() {
     <div className="app">
       <Search {...{ fetchBooks, loading }} />
       <Filter {...{ loading, filterBooks }} />
+      {!loading && <Info {...{ books, filteredBooks }} />}
       {loading ? <Loading /> : <Table books={filteredBooks} />}
     </div>
   );
