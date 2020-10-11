@@ -8,6 +8,7 @@ import Info from "components/Info";
 import Table from "components/Table";
 
 function App() {
+  const [lastSearch, setLastSearch] = useState("");
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [filteredBooks, setFilteredBooks] = useState([]);
@@ -27,6 +28,7 @@ function App() {
     const json = await res.json();
     setBooks(json.docs);
     localStorage.setItem("books", JSON.stringify(json.docs));
+    setLastSearch(searchTerm);
     setLoading(false);
   };
 
@@ -44,7 +46,7 @@ function App() {
     <div className="app">
       <Search {...{ fetchBooks, loading }} />
       <Filter {...{ loading, filterBooks }} />
-      {!loading && <Info {...{ books, filteredBooks }} />}
+      {!loading && <Info {...{ books, filteredBooks, lastSearch }} />}
       {loading ? <Loading /> : <Table books={filteredBooks} />}
     </div>
   );
