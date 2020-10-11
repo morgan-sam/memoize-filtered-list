@@ -25,4 +25,5 @@ const Cell = (props) => {
   else return getCell(value);
 };
 
+Cell.whyDidYouRender = true;
 export default Cell;
