@@ -2,15 +2,21 @@
 .table-cell {
   text-align: center;
   border-collapse: collapse;
-  border: 1px solid black;
 }
 
 table {
   margin: 0;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px 10px#eee;
 }
 
 .table-cell {
   padding: 10px;
+}
+tr {
+  border-bottom: 1px solid #eee;
 }
 
 .table-cell.heading {
