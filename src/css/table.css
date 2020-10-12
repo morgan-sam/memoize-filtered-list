@@ -12,3 +12,8 @@ table {
 .table-cell {
   padding: 10px;
 }
+
+.table-cell.heading {
+  background-color: darkgreen;
+  color: white;
+}

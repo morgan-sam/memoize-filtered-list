@@ -12,7 +12,7 @@ const Table = (props) => {
       <thead>
         <tr>
           {columns.map((el, i) => (
-            <th key={i} className="table-cell">
+            <th key={i} className="table-cell heading">
               {capitalise(el)}
             </th>
           ))}
