@@ -18,6 +18,9 @@ table {
 tr {
   border-bottom: 1px solid #eee;
 }
+tr:nth-child(even) {
+  background-color: hsl(0, 0%, 97%);
+}
 
 .table-cell.heading {
   background-color: var(--main-color);
