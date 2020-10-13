@@ -27,6 +27,16 @@ tr:hover {
   color: white;
 }
 
+tr > *:last-child {
+  color: transparent;
+}
+tr:hover > *:last-child {
+  color: black;
+}
+.expanded > *:last-child {
+  color: black;
+}
+
 .table-cell.heading {
   background-color: var(--main-color);
   color: white;

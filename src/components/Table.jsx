@@ -5,7 +5,7 @@ import Entry from "components/Entry";
 
 const Table = (props) => {
   const { books } = props;
-  const columns = ["ID", "book", "author", "language", "year", "publisher"];
+  const columns = ["ID", "book", "author", "language", "year", "publisher", ""];
 
   if (books.length > 0)
     return (

@@ -19,6 +19,7 @@ const Entry = (props) => {
       ].map((value, cellKey) => (
         <Cell {...{ expanded, value, cellKey }} key={cellKey} />
       ))}
+      {<Cell value={expanded ? "▲" : "▼"} />}
     </tr>
   );
 };

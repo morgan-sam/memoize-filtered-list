@@ -9,7 +9,7 @@ const Cell = (props) => {
   const emptyCell = () => <td className="table-cell" />;
 
   const getCell = (str) => {
-    if (str === undefined) return emptyCell();
+    if (str === undefined || str === "" || str === null) return emptyCell();
     else if (!expanded && str.length > MAX_CELL_ENTRY_LENGTH)
       return (
         <td className="table-cell" title={str}>
