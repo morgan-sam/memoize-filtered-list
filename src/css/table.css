@@ -16,10 +16,15 @@ table {
   padding: 10px 20px;
 }
 tr {
+  cursor: pointer;
   border-bottom: 1px solid #eee;
 }
 tr:nth-child(even) {
   background-color: hsl(0, 0%, 97%);
+}
+tr:hover {
+  background-color: rgb(151, 189, 151);
+  color: white;
 }
 
 .table-cell.heading {
